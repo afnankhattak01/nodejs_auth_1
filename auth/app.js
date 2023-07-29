@@ -21,6 +21,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(fileUpload());
+app.get("/verifyingbuild", (req, res) => {
+  res.end("build is working");
+});
 app.use("/api/loginpage", loginpage);
 app.use("/api/userverification", verification);
 app.use("/api/riskcalculation", graceCalculation);
@@ -32,7 +35,6 @@ app.use("/api/fetchRecord", fetcher);
 app.use("/api/delete", deleter);
 
 app.use("/api/verify", verify);
-
 
 app.listen(process.env.PORT || 5001, () => {
   console.log(`Server is up and running on PORT "${process.env.PORT}" `);

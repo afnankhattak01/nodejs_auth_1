@@ -21,9 +21,7 @@ router.get("/fetch", async (req, res) => {
       const timiSchemaR = await timiSchema.find({ emailAddress: email });
       return res.status(200).json({
         data: timiSchemaR,
-        success:true,
-        
-
+        success: true,
       });
     }
   } catch (error) {
